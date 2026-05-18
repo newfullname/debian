@@ -1,0 +1,17 @@
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: bookworm
+Architectures: amd64 arm64 source
+Components: main
+Description: Bookworm package repository
+SignWith: 43882359E00DC464
+
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: trixie
+Architectures: amd64 arm64 source
+Components: main
+Description: Trixie package repository
+SignWith: 43882359E00DC464

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>country-block Debian repository</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --text: #202124;
+      --muted: #5f6368;
+      --panel: #ffffff;
+      --border: #d8d7d2;
+      --accent: #b3261e;
+      --code: #1f2328;
+      --code-bg: #eeeeea;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171717;
+        --text: #eeeeee;
+        --muted: #b5b5b5;
+        --panel: #222222;
+        --border: #3a3a3a;
+        --accent: #ffb4ab;
+        --code: #eeeeee;
+        --code-bg: #2d2d2d;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    h1 {
+      margin: 36px 0 12px;
+      font-size: 1.6rem;
+    }
+
+    h2 {
+      margin: 36px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    h3 {
+      margin: 24px 0 12px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .summary {
+      max-width: 680px;
+      font-size: 1.1rem;
+    }
+
+    pre {
+      margin: 0;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--code-bg);
+      color: var(--code);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      margin-top: 24px;
+      padding: 12px 0 12px 16px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>country-block</h1>
+    <p class="summary">
+      Scripts to block incoming and/or outgoing network traffic from specified
+      countries on Linux systems.
+    </p>
+    <p class="note">
+      This version is in development and not intended for use in production environments.
+    </p>
+    <p class="note">
+      Use this package at your own risk. It changes firewall rules and can affect network access.
+    </p>
+    <p>
+      This system uses <code>ipset</code> for handling large IP lists and
+      <code>iptables</code> to enforce the firewall rules. The scripts are
+      designed to be persistent across reboots, configurable, and easy to manage.
+    </p>
+    <p>IP lists are sourced from IPdeny:</p>
+    <ul>
+      <li>IPv4: <a href="https://www.ipdeny.com/ipblocks/data/countries">https://www.ipdeny.com/ipblocks/data/countries</a></li>
+      <li>IPv6: <a href="https://www.ipdeny.com/ipv6/ipaddresses/blocks">https://www.ipdeny.com/ipv6/ipaddresses/blocks</a></li>
+    </ul>
+
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Configuration-Driven</strong>: Easily manage which countries to block in a simple text file.</li>
+      <li><strong>Directional Rules</strong>: Block traffic on a per-country basis for <code>input</code>, <code>output</code>, or <code>both</code>.</li>
+      <li><strong>Efficient IP Management</strong>: Uses <code>ipset</code> to handle thousands of IP ranges without slowing down <code>iptables</code>.</li>
+      <li><strong>Persistent</strong>: Firewall rules and IP sets are correctly restored after a system reboot.</li>
+      <li><strong>Automatic Updates</strong>: Includes a systemd timer to automatically update IP lists weekly.</li>
+    </ul>
+
+    <h2>Install</h2>
+
+    <h3>Debian Bookworm</h3>
+    <pre><code>sudo install -d -m 0755 /usr/share/keyrings
+curl -fsSL https://newfullname.github.io/debian/pubkey.gpg \
+  | sudo tee /usr/share/keyrings/newfullname-debian.gpg &gt; /dev/null
+echo "deb [signed-by=/usr/share/keyrings/newfullname-debian.gpg] https://newfullname.github.io/debian bookworm main" \
+  | sudo tee /etc/apt/sources.list.d/newfullname-debian.list
+sudo apt update
+sudo apt install country-block</code></pre>
+
+    <h3>Debian Trixie</h3>
+    <pre><code>sudo install -d -m 0755 /usr/share/keyrings
+curl -fsSL https://newfullname.github.io/debian/pubkey.gpg \
+  | sudo tee /usr/share/keyrings/newfullname-debian.gpg &gt; /dev/null
+echo "deb [signed-by=/usr/share/keyrings/newfullname-debian.gpg] https://newfullname.github.io/debian trixie main" \
+  | sudo tee /etc/apt/sources.list.d/newfullname-debian.list
+sudo apt update
+sudo apt install country-block</code></pre>
+
+    <h2>Source</h2>
+    <p>
+      Package source and documentation:
+      <a href="https://github.com/newfullname/country-block">country-block</a>.
+    </p>
+
+  </main>
+</body>
+</html>

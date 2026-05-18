@@ -1,0 +1,38 @@
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: trixie
+Date: Tue, 19 May 2026 08:16:47 UTC
+Architectures: amd64 arm64
+Components: main
+Description: Trixie package repository
+MD5Sum:
+ a701dc723db5fa0f2b3d3c3a52310e63 880 main/binary-amd64/Packages
+ 11f224e242cdd65549e1586242da1959 565 main/binary-amd64/Packages.gz
+ 55e644c0aefa2865609ccb58edec7943 142 main/binary-amd64/Release
+ a701dc723db5fa0f2b3d3c3a52310e63 880 main/binary-arm64/Packages
+ 11f224e242cdd65549e1586242da1959 565 main/binary-arm64/Packages.gz
+ 708f6568286783b2ac7f86b4ee766bea 142 main/binary-arm64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ e4f7f01a6f220e77f067f2d148c62713 143 main/source/Release
+SHA1:
+ 92e4f511fb1244d5e941199b9ec2388c6a79da5b 880 main/binary-amd64/Packages
+ 08d24679b604e0654687d72a0a8037d9faa0e937 565 main/binary-amd64/Packages.gz
+ baa3f7972d62f7cdd96522b9eb27ef8f737091ab 142 main/binary-amd64/Release
+ 92e4f511fb1244d5e941199b9ec2388c6a79da5b 880 main/binary-arm64/Packages
+ 08d24679b604e0654687d72a0a8037d9faa0e937 565 main/binary-arm64/Packages.gz
+ fa559f930cc0e5441fb1f4967bcea7aa87c47114 142 main/binary-arm64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 6bcf9321b171446c4ccdb34e2d028958d8c4573b 143 main/source/Release
+SHA256:
+ fd2586365f7114d23dd87669ea3be11e1a4f88a10dce67ad80286a3c1e59ee92 880 main/binary-amd64/Packages
+ cf22004cfeb9b916449812fc9ca04fc76779e54b1f34acec4f1ae2fb2da9658b 565 main/binary-amd64/Packages.gz
+ 85ac4c4a085f4a10b9189ee3b40271b0ea69b0fc2ce19788c5ea5d1b759e0b71 142 main/binary-amd64/Release
+ fd2586365f7114d23dd87669ea3be11e1a4f88a10dce67ad80286a3c1e59ee92 880 main/binary-arm64/Packages
+ cf22004cfeb9b916449812fc9ca04fc76779e54b1f34acec4f1ae2fb2da9658b 565 main/binary-arm64/Packages.gz
+ fd648b3f7b969fac3bb2411c8f6a61a647b3dda0ee02444c71e8f0dcc44acfe7 142 main/binary-arm64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 17f3461dab3418c21cd9df2a1e36eae4668e1a2f9e439c8bddf60048375ba91a 143 main/source/Release

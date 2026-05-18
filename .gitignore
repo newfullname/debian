@@ -1,0 +1,18 @@
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+*~
+.*.swp
+.*.swo
+
+# Build leftovers
+*.build
+*.buildinfo
+*.changes
+
+# Optional local package staging
+db/
+incoming/
+
+# Optional local test downloads
+tmp/
