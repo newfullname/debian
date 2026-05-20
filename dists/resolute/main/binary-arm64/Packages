@@ -1,17 +1,17 @@
 Package: country-block
-Version: 0.2.0
+Version: 0.3.0
 Architecture: all
 Maintainer: Nik Unknown <266516374+newfullname@users.noreply.github.com>
-Installed-Size: 47
+Installed-Size: 57
 Depends: ipset, iptables, curl
 Homepage: http://github.com/newfullname/country-block.git
 Priority: optional
 Section: net
-Filename: pool/main/c/country-block/country-block_0.2.0_all.deb
-Size: 9888
-SHA256: d1c6e75c2b99555afcaccd3eba0d9fab208e9a4d182c294b003a1350dac4172c
-SHA1: e6246d1472fd4b05ab0e040b5a7515c60d40dcf4
-MD5sum: 7c46aa0a9d05e6c4364f5c1d64c53021
+Filename: pool/main/c/country-block/country-block_0.3.0_all.deb
+Size: 12588
+SHA256: fb2cfeeaa62037097d74ed0a12de5519d5fef16aaf40d3c98af37e80291e8959
+SHA1: b5319b87299ac9fa0a369f0cfef95c232af7373f
+MD5sum: cf61fc9d8668b89004ea593db95ee804
 Description: block network traffic by country
  Country Block maintains ipset sets from country IP block lists and applies
  iptables and ip6tables rules for the configured countries, chains, and IP

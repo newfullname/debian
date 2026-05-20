@@ -121,10 +121,11 @@
       <code>iptables</code>, <code>ip6tables</code>, and automatic update jobs.
     </p>
     <p class="note">
-      This version is in development and not intended for use in production environments.
+      This package is in development and not intended for use in production environments.
     </p>
     <p class="note">
       Use this package at your own risk. It changes firewall rules and can affect network access.
+      For interactive changes, prefer <code>sudo country-block edit</code> so new rules are tested temporarily before they become persistent.
     </p>
 
     <p>
@@ -194,11 +195,10 @@ sudo apt install country-block</code></pre>
 
     <h2>Configure country firewall rules</h2>
     <p>
-      Edit the configuration file after installation, then run an update to
-      download country lists and apply firewall rules immediately.
+      For remote machines, prefer the safe editor because it tests the new
+      rules before replacing the persistent config.
     </p>
-    <pre><code>sudo editor /etc/country-block/config.conf
-sudo country-block update</code></pre>
+    <pre><code>sudo country-block edit</code></pre>
     <p>
       Configuration entries use the format
       <code>&lt;country-codes&gt; &lt;chains&gt; &lt;ip-versions&gt;</code>. Chains can be
@@ -211,6 +211,28 @@ ru,ir * *
 
 # Block only incoming IPv4 traffic from China
 cn input v4</code></pre>
+
+    <h2>Safe changes</h2>
+    <p>
+      <code>country-block edit</code> opens a temporary copy of
+      <code>/etc/country-block/config.conf</code> with <code>${EDITOR:-vi}</code>,
+      prepares any missing country ipsets, applies the edited rules
+      temporarily, and asks you to type <code>yes</code> within 120 seconds. If
+      you confirm, the temporary file becomes the persistent config. If you
+      disconnect, press Ctrl-C, or do not confirm in time, the previous firewall
+      state is restored and the persistent config is left unchanged.
+    </p>
+    <pre><code>sudo country-block edit --timeout 300</code></pre>
+    <p>
+      For generated configs or automation, use <code>try</code> directly.
+    </p>
+    <pre><code>sudo country-block try --config ./candidate.conf --timeout 120</code></pre>
+    <p>
+      After changing rules, <code>sudo country-block update</code> downloads the
+      latest country lists, updates the ipsets, and applies the matching
+      firewall rules immediately. Weekly updates are handled automatically by
+      <code>country-block.timer</code>.
+    </p>
 
     <h2>Upgrade, uninstall, and troubleshooting</h2>
 

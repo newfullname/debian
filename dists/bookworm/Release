@@ -2,36 +2,36 @@ Origin: Nik Unknown
 Label: Nik Unknown Debian Repo
 Suite: stable
 Codename: bookworm
-Date: Tue, 19 May 2026 08:16:33 UTC
+Date: Wed, 20 May 2026 09:55:13 UTC
 Architectures: amd64 arm64
 Components: main
 Description: Bookworm package repository
 MD5Sum:
- a701dc723db5fa0f2b3d3c3a52310e63 880 main/binary-amd64/Packages
- 11f224e242cdd65549e1586242da1959 565 main/binary-amd64/Packages.gz
+ 3dafc325cbde86a03c076a4c4ece2038 886 main/binary-amd64/Packages
+ 4e7675e91452047954fa648d96b07980 567 main/binary-amd64/Packages.gz
  cb1dbb7aa80bfa072bf3794e8bee0a79 144 main/binary-amd64/Release
- a701dc723db5fa0f2b3d3c3a52310e63 880 main/binary-arm64/Packages
- 11f224e242cdd65549e1586242da1959 565 main/binary-arm64/Packages.gz
+ 3dafc325cbde86a03c076a4c4ece2038 886 main/binary-arm64/Packages
+ 4e7675e91452047954fa648d96b07980 567 main/binary-arm64/Packages.gz
  fa2905f6701f7782ca62df333ae0dbbe 144 main/binary-arm64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
  252c26208d1e0674662a5f23f6e0e222 145 main/source/Release
 SHA1:
- 92e4f511fb1244d5e941199b9ec2388c6a79da5b 880 main/binary-amd64/Packages
- 08d24679b604e0654687d72a0a8037d9faa0e937 565 main/binary-amd64/Packages.gz
+ 6ea011f71b40d7c212e4e50c105429404490d1d7 886 main/binary-amd64/Packages
+ 840545395367fd6f6dd2edc8b2caeb182406afc4 567 main/binary-amd64/Packages.gz
  2f90536dbc1517b985fb41fa1f829b3ef22d1b8e 144 main/binary-amd64/Release
- 92e4f511fb1244d5e941199b9ec2388c6a79da5b 880 main/binary-arm64/Packages
- 08d24679b604e0654687d72a0a8037d9faa0e937 565 main/binary-arm64/Packages.gz
+ 6ea011f71b40d7c212e4e50c105429404490d1d7 886 main/binary-arm64/Packages
+ 840545395367fd6f6dd2edc8b2caeb182406afc4 567 main/binary-arm64/Packages.gz
  a737cb8ed952cab24be91617f082159b79383f49 144 main/binary-arm64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
  7ab98d1d42dc952b7e01eee867d002de95b8c509 145 main/source/Release
 SHA256:
- fd2586365f7114d23dd87669ea3be11e1a4f88a10dce67ad80286a3c1e59ee92 880 main/binary-amd64/Packages
- cf22004cfeb9b916449812fc9ca04fc76779e54b1f34acec4f1ae2fb2da9658b 565 main/binary-amd64/Packages.gz
+ 8eca397cb9b2255c0aeda91c868bca0e1fbc14f40ded5ec8843d0cf5554c7e6b 886 main/binary-amd64/Packages
+ fb856e3fb00a29678e50671c9acb9a2cc27a80c73b10a64995a5c1959b381966 567 main/binary-amd64/Packages.gz
  2376d3ab90b5a1e1dc430df89e79a3433c208d09c26fb79a87b08ecbda40958c 144 main/binary-amd64/Release
- fd2586365f7114d23dd87669ea3be11e1a4f88a10dce67ad80286a3c1e59ee92 880 main/binary-arm64/Packages
- cf22004cfeb9b916449812fc9ca04fc76779e54b1f34acec4f1ae2fb2da9658b 565 main/binary-arm64/Packages.gz
+ 8eca397cb9b2255c0aeda91c868bca0e1fbc14f40ded5ec8843d0cf5554c7e6b 886 main/binary-arm64/Packages
+ fb856e3fb00a29678e50671c9acb9a2cc27a80c73b10a64995a5c1959b381966 567 main/binary-arm64/Packages.gz
  90cb8152485749c9ba8d7cac1b707aaf74ba134f3ca61068aa2565b1150742d6 144 main/binary-arm64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
