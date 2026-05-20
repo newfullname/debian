@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>country-block Debian repository</title>
+  <title>country-block Debian package for firewall country blocking</title>
+  <meta name="description" content="Install the country-block Debian package from an apt repository to configure firewall country blocking with ipset, iptables, automatic install setup, and weekly updates.">
+  <link rel="canonical" href="https://newfullname.github.io/debian/country-block.html">
   <style>
     :root {
       color-scheme: light dark;
@@ -83,12 +85,12 @@
     }
 
     .summary {
-      max-width: 680px;
+      max-width: 720px;
       font-size: 1.1rem;
     }
 
     pre {
-      margin: 0;
+      margin: 0 0 16px;
       overflow-x: auto;
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -112,10 +114,11 @@
 </head>
 <body>
   <main>
-    <h1>country-block</h1>
+    <h1>country-block Debian package</h1>
     <p class="summary">
-      Scripts to block incoming and/or outgoing network traffic from specified
-      countries on Linux systems.
+      Install <code>country-block</code> from this Debian apt repository to
+      manage country-based firewall blocking with <code>ipset</code>,
+      <code>iptables</code>, <code>ip6tables</code>, and automatic update jobs.
     </p>
     <p class="note">
       This version is in development and not intended for use in production environments.
@@ -123,27 +126,20 @@
     <p class="note">
       Use this package at your own risk. It changes firewall rules and can affect network access.
     </p>
+
     <p>
-      This system uses <code>ipset</code> for handling large IP lists and
-      <code>iptables</code> to enforce the firewall rules. The scripts are
-      designed to be persistent across reboots, configurable, and easy to manage.
+      This country block Debian firewall package installs from an apt repository
+      and uses automatic install and update hooks to block incoming, outgoing,
+      or forwarded traffic for configured countries. Country IP lists are
+      downloaded from IPdeny and stored locally so firewall rules can be restored
+      after reboot.
     </p>
-    <p>IP lists are sourced from IPdeny:</p>
     <ul>
-      <li>IPv4: <a href="https://www.ipdeny.com/ipblocks/data/countries">https://www.ipdeny.com/ipblocks/data/countries</a></li>
-      <li>IPv6: <a href="https://www.ipdeny.com/ipv6/ipaddresses/blocks">https://www.ipdeny.com/ipv6/ipaddresses/blocks</a></li>
+      <li>IPv4 lists: <a href="https://www.ipdeny.com/ipblocks/data/countries">https://www.ipdeny.com/ipblocks/data/countries</a></li>
+      <li>IPv6 lists: <a href="https://www.ipdeny.com/ipv6/ipaddresses/blocks">https://www.ipdeny.com/ipv6/ipaddresses/blocks</a></li>
     </ul>
 
-    <h2>Features</h2>
-    <ul>
-      <li><strong>Configuration-Driven</strong>: Easily manage which countries to block in a simple text file.</li>
-      <li><strong>Directional Rules</strong>: Block traffic on a per-country basis for <code>input</code>, <code>output</code>, or <code>both</code>.</li>
-      <li><strong>Efficient IP Management</strong>: Uses <code>ipset</code> to handle thousands of IP ranges without slowing down <code>iptables</code>.</li>
-      <li><strong>Persistent</strong>: Firewall rules and IP sets are correctly restored after a system reboot.</li>
-      <li><strong>Automatic Updates</strong>: Includes a systemd timer to automatically update IP lists weekly.</li>
-    </ul>
-
-    <h2>Install</h2>
+    <h2>Install from the apt repository</h2>
 
     <h3>Debian Bookworm</h3>
     <pre><code>sudo install -d -m 0755 /usr/share/keyrings
@@ -163,12 +159,84 @@ echo "deb [signed-by=/usr/share/keyrings/newfullname-debian.gpg] https://newfull
 sudo apt update
 sudo apt install country-block</code></pre>
 
+    <h2>What gets configured automatically</h2>
+    <p>
+      Installing the Debian package configures the firewall workflow around
+      IPdeny country lists, <code>ipset</code> sets, and <code>iptables</code>
+      rules. The package downloads country network ranges, stores them in
+      efficient sets, and applies matching firewall drops for the configured
+      directions and IP versions.
+    </p>
+    <ul>
+      <li>IPdeny provides the IPv4 and IPv6 country block lists used for firewall decisions.</li>
+      <li><code>ipset</code> stores large country IP ranges efficiently so rules stay manageable.</li>
+      <li><code>iptables</code> and <code>ip6tables</code> apply drop rules for input, output, or forward traffic.</li>
+      <li>systemd restores cached country-block rules during boot so configured blocking persists after restart.</li>
+      <li>A weekly systemd timer refreshes country lists and reapplies the firewall rules automatically.</li>
+    </ul>
+
+    <h2>Supported Debian releases</h2>
+    <p>
+      This repository currently publishes <code>country-block</code> version
+      <code>0.2.0</code> for Debian Bookworm and Debian Trixie on
+      <code>amd64</code> and <code>arm64</code>. The package architecture is
+      <code>all</code> and depends on <code>ipset</code>, <code>iptables</code>,
+      and <code>curl</code>.
+    </p>
+
+    <h2>Configure country firewall rules</h2>
+    <p>
+      Edit the configuration file after installation, then run an update to
+      download country lists and apply firewall rules immediately.
+    </p>
+    <pre><code>sudo editor /etc/country-block/config.conf
+sudo country-block update</code></pre>
+    <p>
+      Configuration entries use the format
+      <code>&lt;country-codes&gt; &lt;chains&gt; &lt;ip-versions&gt;</code>. Chains can be
+      <code>input</code>, <code>output</code>, <code>forward</code>, or
+      <code>*</code>. IP versions can be <code>v4</code>, <code>v6</code>, or
+      <code>*</code>.
+    </p>
+    <pre><code># Block all traffic for Russia and Iran, IPv4 and IPv6
+ru,ir * *
+
+# Block only incoming IPv4 traffic from China
+cn input v4</code></pre>
+
+    <h2>Upgrade, uninstall, and troubleshooting</h2>
+
+    <h3>Upgrade</h3>
+    <pre><code>sudo apt update
+sudo apt install --only-upgrade country-block</code></pre>
+
+    <h3>Uninstall</h3>
+    <pre><code>sudo apt remove country-block</code></pre>
+    <p>
+      Removing the package stops the systemd units, removes managed firewall
+      rules marked with the <code>country-block-rule</code> comment, and destroys
+      managed ipsets named with the <code>country_</code> prefix. To also remove
+      package configuration and cached runtime data, purge the package.
+    </p>
+    <pre><code>sudo apt purge country-block</code></pre>
+
+    <h3>Troubleshooting</h3>
+    <pre><code>systemctl status country-block.service
+systemctl status country-block.timer
+sudo journalctl -u country-block.service -u country-block-update.service
+sudo country-block update
+sudo country-block apply</code></pre>
+    <p>
+      The command must run as root when changing firewall state. If an update
+      cannot download a country list, check network access to IPdeny and rerun
+      <code>sudo country-block update</code>.
+    </p>
+
     <h2>Source</h2>
     <p>
       Package source and documentation:
       <a href="https://github.com/newfullname/country-block">country-block</a>.
     </p>
-
   </main>
 </body>
 </html>
