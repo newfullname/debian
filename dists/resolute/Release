@@ -1,0 +1,38 @@
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: resolute
+Date: Wed, 20 May 2026 06:44:24 UTC
+Architectures: amd64 arm64
+Components: main
+Description: Ubuntu 26.04 LTS package repository
+MD5Sum:
+ 017f0e70fbf5cf5ad697aba34b33fe8f 885 main/binary-amd64/Packages
+ 87ae2f9fe0ae9e7016ccf4c9320c3eac 567 main/binary-amd64/Packages.gz
+ b8f734e103a3dd5f15a47ac6c1f50fa4 152 main/binary-amd64/Release
+ 017f0e70fbf5cf5ad697aba34b33fe8f 885 main/binary-arm64/Packages
+ 87ae2f9fe0ae9e7016ccf4c9320c3eac 567 main/binary-arm64/Packages.gz
+ d6df66b8f61ccbc4e5a07ba45ce0f86c 152 main/binary-arm64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 9f23506147cfedb19acd9bb13a87209a 153 main/source/Release
+SHA1:
+ bc9a18f3c2154211d9eeb621826438d30d89b460 885 main/binary-amd64/Packages
+ 7243c77579995b6694c4bd67ff38707dc5af304a 567 main/binary-amd64/Packages.gz
+ 62cfc42f2a2af4b75c156f200d6e58658ea2c7ea 152 main/binary-amd64/Release
+ bc9a18f3c2154211d9eeb621826438d30d89b460 885 main/binary-arm64/Packages
+ 7243c77579995b6694c4bd67ff38707dc5af304a 567 main/binary-arm64/Packages.gz
+ b8d3d9fb6119f7155d637950994dc141f7d9db24 152 main/binary-arm64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 56c958f416763f45ac570121b4d7fff475571acf 153 main/source/Release
+SHA256:
+ 6540161aa223ddeeab6f8eaaff88120239b567ccbc0a5abf50cdd82484975958 885 main/binary-amd64/Packages
+ 201fcf14b44e2af9a60e673da17e637e959d83afedf60e2c69626c04f4c84791 567 main/binary-amd64/Packages.gz
+ 64a11315912d1c0f723ac8b291779ae91038f3aa56893f75e2fa334b601da9b6 152 main/binary-amd64/Release
+ 6540161aa223ddeeab6f8eaaff88120239b567ccbc0a5abf50cdd82484975958 885 main/binary-arm64/Packages
+ 201fcf14b44e2af9a60e673da17e637e959d83afedf60e2c69626c04f4c84791 567 main/binary-arm64/Packages.gz
+ 8d09a0409d77758deb09c7a3ed183060062d8ecd4ecef3660a14418723ea5e99 152 main/binary-arm64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 5a830ed1b4172122eba06e75b2bfa3fb27b9df073902cfb85a20cf50eec5c877 153 main/source/Release

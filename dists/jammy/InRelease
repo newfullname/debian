@@ -1,0 +1,57 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: jammy
+Date: Wed, 20 May 2026 06:43:20 UTC
+Architectures: amd64 arm64
+Components: main
+Description: Ubuntu 22.04 LTS package repository
+MD5Sum:
+ 017f0e70fbf5cf5ad697aba34b33fe8f 885 main/binary-amd64/Packages
+ 87ae2f9fe0ae9e7016ccf4c9320c3eac 567 main/binary-amd64/Packages.gz
+ 53a4b53be072ead50d483bf7ee0a0604 152 main/binary-amd64/Release
+ 017f0e70fbf5cf5ad697aba34b33fe8f 885 main/binary-arm64/Packages
+ 87ae2f9fe0ae9e7016ccf4c9320c3eac 567 main/binary-arm64/Packages.gz
+ 494c687feaee561b0575e81de2ea1b87 152 main/binary-arm64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 3cb04292447e52090a2c78a2be530dcc 153 main/source/Release
+SHA1:
+ bc9a18f3c2154211d9eeb621826438d30d89b460 885 main/binary-amd64/Packages
+ 7243c77579995b6694c4bd67ff38707dc5af304a 567 main/binary-amd64/Packages.gz
+ a2d7c95e0608a085f93ba583e31d7b68fb8e6f76 152 main/binary-amd64/Release
+ bc9a18f3c2154211d9eeb621826438d30d89b460 885 main/binary-arm64/Packages
+ 7243c77579995b6694c4bd67ff38707dc5af304a 567 main/binary-arm64/Packages.gz
+ 8e08eda1b0e187c2e5c874364ec2355974240145 152 main/binary-arm64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ f33535a6509d9f752c0da1ebb0d19b69b07d4165 153 main/source/Release
+SHA256:
+ 6540161aa223ddeeab6f8eaaff88120239b567ccbc0a5abf50cdd82484975958 885 main/binary-amd64/Packages
+ 201fcf14b44e2af9a60e673da17e637e959d83afedf60e2c69626c04f4c84791 567 main/binary-amd64/Packages.gz
+ 3d2584e009e07a238cf46cfeb7c6ab476895d7faa3d7232eef44f8d70a5227f6 152 main/binary-amd64/Release
+ 6540161aa223ddeeab6f8eaaff88120239b567ccbc0a5abf50cdd82484975958 885 main/binary-arm64/Packages
+ 201fcf14b44e2af9a60e673da17e637e959d83afedf60e2c69626c04f4c84791 567 main/binary-arm64/Packages.gz
+ c66aa9bc9ba372180b2118debfa634a29e5203d5343485097700101bdbe919ab 152 main/binary-arm64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ d33c37bd1e669ebe9848a97b955354e80cc75a0cbd54dc4f1c8d4949c63e08d5 153 main/source/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE9uxHcKfkuMvEgreKQ4gjWeANxGQFAmoNWAwACgkQQ4gjWeAN
+xGQODQ/+OOidw/H0XIKgc899IucUA6a5NeJkgBeSlAIOgOefZcM6tUXeX2Cqx8fB
+YBKGH/gMA90Kk8XdCoheLEmrQgcdlq41WPUC2rsjvED/LR+DcEV2zVpT4TWmX5wO
+0YA9OIbIIMUY4BRQfXSlYfJNbLYWNtk6sq00fWjVOQgJHYwTsmrwDlASjQuaIT6u
+7Jh66HLRsN5RiSfWP0IEy0isT6UC6Sk5skKd6lB/CCWYD51BqrPS8EOWhWZApSig
+ewPhLloQYtk/AUcUs5LvO3xHaFaqP0htjoBtsAyQdOkQheFRDVkHYX1BK+aUBVpM
+MTryduLtWDD43H2rChurTNQWN/7qMVFwbkwIYzVFqQwa6hmqzpb6gXrCXXo75vXT
+5FXDVcr8+GNSmoAsLAb1YmC+wD3DrVdXS8BJ1d+lcE7FLulay1P0/Lt0i+vVkCoe
+xfj1GLetfa0bS6kx4pY9fqocBkXwRePXM0pom+2WPEwXpgssLfR8/ISwqEanEatr
+WmgkCvzo2OpIEy7BR8DgxP/kne38t08pua+ac2y9ApLRLg8mxJI9Emo0Ng5Tp9f6
+5SNbloYKmhrvHVSLFHh+2JeJjmpd5EjTfhwWsy9h2Vr+EycTigxcIRZyPMh8cgof
+y1nmQPpS6VyIfqNs9II482Rcbp8NPZSgCaTcJa0eo5HYc5K/WPU=
+=ebCc
+-----END PGP SIGNATURE-----

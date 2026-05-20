@@ -15,3 +15,30 @@ Architectures: amd64 arm64 source
 Components: main
 Description: Trixie package repository
 SignWith: 43882359E00DC464
+
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: jammy
+Architectures: amd64 arm64 source
+Components: main
+Description: Ubuntu 22.04 LTS package repository
+SignWith: 43882359E00DC464
+
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: noble
+Architectures: amd64 arm64 source
+Components: main
+Description: Ubuntu 24.04 LTS package repository
+SignWith: 43882359E00DC464
+
+Origin: Nik Unknown
+Label: Nik Unknown Debian Repo
+Suite: stable
+Codename: resolute
+Architectures: amd64 arm64 source
+Components: main
+Description: Ubuntu 26.04 LTS package repository
+SignWith: 43882359E00DC464

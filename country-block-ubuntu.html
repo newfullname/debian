@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>country-block Ubuntu package for firewall country blocking</title>
+  <meta name="description" content="Install the country-block Ubuntu package from an apt repository to configure firewall country blocking with ipset, iptables, automatic install setup, and weekly updates.">
+  <link rel="canonical" href="https://newfullname.github.io/debian/country-block-ubuntu.html">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --text: #202124;
+      --muted: #5f6368;
+      --panel: #ffffff;
+      --border: #d8d7d2;
+      --accent: #b3261e;
+      --code: #1f2328;
+      --code-bg: #eeeeea;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171717;
+        --text: #eeeeee;
+        --muted: #b5b5b5;
+        --panel: #222222;
+        --border: #3a3a3a;
+        --accent: #ffb4ab;
+        --code: #eeeeee;
+        --code-bg: #2d2d2d;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    h1 {
+      margin: 36px 0 12px;
+      font-size: 1.6rem;
+    }
+
+    h2 {
+      margin: 36px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    h3 {
+      margin: 24px 0 12px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .summary {
+      max-width: 720px;
+      font-size: 1.1rem;
+    }
+
+    pre {
+      margin: 0 0 16px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--code-bg);
+      color: var(--code);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      margin-top: 24px;
+      padding: 12px 0 12px 16px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>country-block Ubuntu package</h1>
+    <p class="summary">
+      Install <code>country-block</code> from this Ubuntu apt repository to
+      manage country-based firewall blocking with <code>ipset</code>,
+      <code>iptables</code>, <code>ip6tables</code>, and automatic update jobs.
+    </p>
+    <p class="note">
+      This version is in development and not intended for use in production environments.
+    </p>
+    <p class="note">
+      Use this package at your own risk. It changes firewall rules and can affect network access.
+    </p>
+
+    <p>
+      This country block Ubuntu firewall package installs from an apt repository
+      and uses automatic install and update hooks to block incoming, outgoing,
+      or forwarded traffic for configured countries. Country IP lists are
+      downloaded from IPdeny and stored locally so firewall rules can be restored
+      after reboot.
+    </p>
+    <ul>
+      <li>IPv4 lists: <a href="https://www.ipdeny.com/ipblocks/data/countries">https://www.ipdeny.com/ipblocks/data/countries</a></li>
+      <li>IPv6 lists: <a href="https://www.ipdeny.com/ipv6/ipaddresses/blocks">https://www.ipdeny.com/ipv6/ipaddresses/blocks</a></li>
+    </ul>
+
+    <h2>Install from the apt repository</h2>
+
+    <h3>Ubuntu 22.04 LTS Jammy</h3>
+    <pre><code>sudo install -d -m 0755 /usr/share/keyrings
+curl -fsSL https://newfullname.github.io/debian/pubkey.gpg \
+  | sudo tee /usr/share/keyrings/newfullname-debian.gpg &gt; /dev/null
+echo "deb [signed-by=/usr/share/keyrings/newfullname-debian.gpg] https://newfullname.github.io/debian jammy main" \
+  | sudo tee /etc/apt/sources.list.d/newfullname-debian.list
+sudo apt update
+sudo apt install country-block</code></pre>
+
+    <h3>Ubuntu 24.04 LTS Noble</h3>
+    <pre><code>sudo install -d -m 0755 /usr/share/keyrings
+curl -fsSL https://newfullname.github.io/debian/pubkey.gpg \
+  | sudo tee /usr/share/keyrings/newfullname-debian.gpg &gt; /dev/null
+echo "deb [signed-by=/usr/share/keyrings/newfullname-debian.gpg] https://newfullname.github.io/debian noble main" \
+  | sudo tee /etc/apt/sources.list.d/newfullname-debian.list
+sudo apt update
+sudo apt install country-block</code></pre>
+
+    <h3>Ubuntu 26.04 LTS Resolute</h3>
+    <pre><code>sudo install -d -m 0755 /usr/share/keyrings
+curl -fsSL https://newfullname.github.io/debian/pubkey.gpg \
+  | sudo tee /usr/share/keyrings/newfullname-debian.gpg &gt; /dev/null
+echo "deb [signed-by=/usr/share/keyrings/newfullname-debian.gpg] https://newfullname.github.io/debian resolute main" \
+  | sudo tee /etc/apt/sources.list.d/newfullname-debian.list
+sudo apt update
+sudo apt install country-block</code></pre>
+
+    <h2>What gets configured automatically</h2>
+    <p>
+      Installing the Ubuntu package configures the firewall workflow around
+      IPdeny country lists, <code>ipset</code> sets, and <code>iptables</code>
+      rules. The package downloads country network ranges, stores them in
+      efficient sets, and applies matching firewall drops for the configured
+      directions and IP versions.
+    </p>
+    <ul>
+      <li>IPdeny provides the IPv4 and IPv6 country block lists used for firewall decisions.</li>
+      <li><code>ipset</code> stores large country IP ranges efficiently so rules stay manageable.</li>
+      <li><code>iptables</code> and <code>ip6tables</code> apply drop rules for input, output, or forward traffic.</li>
+      <li>systemd restores cached country-block rules during boot so configured blocking persists after restart.</li>
+      <li>A weekly systemd timer refreshes country lists and reapplies the firewall rules automatically.</li>
+    </ul>
+
+    <h2>Configured Ubuntu releases</h2>
+    <p>
+      This repository is configured for Ubuntu 22.04 LTS, Ubuntu 24.04 LTS,
+      and Ubuntu 26.04 LTS on <code>amd64</code> and <code>arm64</code>. The
+      package architecture is <code>all</code> and depends on
+      <code>ipset</code>, <code>iptables</code>, and <code>curl</code>.
+    </p>
+
+    <h2>Configure country firewall rules</h2>
+    <p>
+      Edit the configuration file after installation, then run an update to
+      download country lists and apply firewall rules immediately.
+    </p>
+    <pre><code>sudo editor /etc/country-block/config.conf
+sudo country-block update</code></pre>
+    <p>
+      Configuration entries use the format
+      <code>&lt;country-codes&gt; &lt;chains&gt; &lt;ip-versions&gt;</code>. Chains can be
+      <code>input</code>, <code>output</code>, <code>forward</code>, or
+      <code>*</code>. IP versions can be <code>v4</code>, <code>v6</code>, or
+      <code>*</code>.
+    </p>
+    <pre><code># Block all traffic for Russia and Iran, IPv4 and IPv6
+ru,ir * *
+
+# Block only incoming IPv4 traffic from China
+cn input v4</code></pre>
+
+    <h2>Upgrade, uninstall, and troubleshooting</h2>
+
+    <h3>Upgrade</h3>
+    <pre><code>sudo apt update
+sudo apt install --only-upgrade country-block</code></pre>
+
+    <h3>Uninstall</h3>
+    <pre><code>sudo apt remove country-block</code></pre>
+    <p>
+      Removing the package stops the systemd units, removes managed firewall
+      rules marked with the <code>country-block-rule</code> comment, and destroys
+      managed ipsets named with the <code>country_</code> prefix. To also remove
+      package configuration and cached runtime data, purge the package.
+    </p>
+    <pre><code>sudo apt purge country-block</code></pre>
+
+    <h3>Troubleshooting</h3>
+    <pre><code>systemctl status country-block.service
+systemctl status country-block.timer
+sudo journalctl -u country-block.service -u country-block-update.service
+sudo country-block update
+sudo country-block apply</code></pre>
+    <p>
+      The command must run as root when changing firewall state. If an update
+      cannot download a country list, check network access to IPdeny and rerun
+      <code>sudo country-block update</code>.
+    </p>
+
+    <h2>Source</h2>
+    <p>
+      Package source and documentation:
+      <a href="https://github.com/newfullname/country-block">country-block</a>.
+    </p>
+  </main>
+</body>
+</html>
