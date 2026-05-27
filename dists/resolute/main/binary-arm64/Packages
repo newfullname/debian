@@ -1,23 +1,23 @@
 Package: country-block
-Version: 0.3.0
+Version: 0.4.0
 Architecture: all
 Maintainer: Nik Unknown <266516374+newfullname@users.noreply.github.com>
-Installed-Size: 57
+Installed-Size: 73
 Depends: ipset, iptables, curl
 Homepage: http://github.com/newfullname/country-block.git
 Priority: optional
 Section: net
-Filename: pool/main/c/country-block/country-block_0.3.0_all.deb
-Size: 12588
-SHA256: fb2cfeeaa62037097d74ed0a12de5519d5fef16aaf40d3c98af37e80291e8959
-SHA1: b5319b87299ac9fa0a369f0cfef95c232af7373f
-MD5sum: cf61fc9d8668b89004ea593db95ee804
+Filename: pool/main/c/country-block/country-block_0.4.0_all.deb
+Size: 16476
+SHA256: 279c21af57d5fc7e095f8b0dfaea8e784035dfe80de6bbaf91131d17d6309ac9
+SHA1: 2827ec53d73615815d45e90898d3e383ff3ee10d
+MD5sum: e14fdefb0c0e6636762f6a3216d462e7
 Description: block network traffic by country
  Country Block maintains ipset sets from country IP block lists and applies
  iptables and ip6tables rules for the configured countries, chains, and IP
  versions.
  .
- The package installs a command-line helper, a persistent systemd service for
- restoring firewall rules, and scheduled refresh jobs for keeping country lists
- current.
+ The package installs a command-line helper, an optional systemd service for
+ restoring firewall rules, and an optional scheduled refresh job for keeping
+ country lists current.
 
